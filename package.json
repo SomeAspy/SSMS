@@ -1,0 +1,17 @@
+{
+  "name": "SSMS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "FileHost"
+  ],
+  "author": "Aiden",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "toml": "^3.0.0"
+  }
+}
