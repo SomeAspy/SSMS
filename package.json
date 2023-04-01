@@ -2,9 +2,10 @@
   "name": "SSMS",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
     "FileHost"
@@ -12,6 +13,7 @@
   "author": "Aiden",
   "license": "GPL-3.0-only",
   "dependencies": {
-    "toml": "^3.0.0"
+    "@fastify/static": "^6.9.0",
+    "fastify": "^4.15.0"
   }
 }
