@@ -2,7 +2,13 @@ import { randomBytes } from 'crypto';
 import { readJSON } from './JsonWorker.js';
 import { hash, verify } from 'argon2';
 
-const db = 'database/passwords.json';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
+const db = __dirname + '/../database/passwords.json';
 
 /**
  * This function generates a random salt
