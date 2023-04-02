@@ -11,6 +11,7 @@ TODO
 -   Responsive UI
 -   Folder support
     -   Recursive Support up to at least 100
+-   Promisify FS modules
 
 ## EXTRA
 
@@ -23,7 +24,9 @@ TODO
 -   Reactive UI (JSX)
 -   Docker container
 -   Cool logo
--   Hash and salt passwords
+-   ~~Hash and salt passwords~~
+-   ~~JSdoc on everything~~
+-   ~~Switch to Argon2 Password Hashing~~
 
 ## PROBABLY NEVER GONNA HAPPEN
 
