@@ -2,13 +2,11 @@
     "source": {
         "includePattern": ".+\\.js(doc|x)?$",
         "include": [
-            "src"
+            "src",
+            "tests"
         ],
         "exclude": [
-            "node_modules",
-            "out",
-            ".vscode",
-            ".github"
+            "tests/resources"
         ]
     },
     "recurseDepth": 10,
