@@ -1,12 +1,33 @@
-name: Tests
+name: Jest Tests
 
-on: [push]
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
-  build:
+  run-linters:
+    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Run Jest
-        uses: stefanoeb/jest-action@1.0.3
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Install Node.js dependencies
+        run: pnpm install
+
+      - name: Run tests
+        run: pnpm run test
