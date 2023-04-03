@@ -4,8 +4,9 @@
     },
     "cSpell.words": [
         "mkdocs",
-        "taffydb",
-        "SSMS"
+        "nodenext",
+        "SSMS",
+        "taffydb"
     ],
     "cSpell.ignorePaths": [
         "package-lock.json",

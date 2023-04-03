@@ -1,13 +1,13 @@
 {
   "name": "simple-secure-media-server",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js --",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint . --ext .ts",
     "mkdocs": "jsdoc -c jsdoc.json"
   },
   "keywords": [
@@ -21,6 +21,10 @@
     "fastify": "^4.15.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
     "better-docs": "^2.7.2",
     "eslint": "^8.37.0",
     "eslint-plugin-jsdoc": "^40.1.1",
@@ -33,6 +37,9 @@
     "prop-types": "^15.5.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "taffydb": "^2.7.3"
+    "taffydb": "^2.7.3",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.3",
+    "typescript-eslint": "0.0.1-alpha.0"
   }
 }

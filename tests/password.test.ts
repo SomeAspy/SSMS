@@ -1,7 +1,12 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { test, expect } from '@jest/globals';
-import { authenticate, newSecureFile, deleteSecureFile, changePassword } from '../src/functions/password.js';
+import {
+    authenticate,
+    newSecureFile,
+    deleteSecureFile,
+    changePassword,
+} from '../src/functions/password.js';
 import { writeJSON } from '../src/functions/JsonWorker.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -12,13 +17,16 @@ await writeJSON(__dirname + '/resources/test.passwords.json', []);
 
 await newSecureFile('public/OSI-password.png', 'PassWord', testDB);
 
-
 test('AuthFailure', async () => {
-    expect(await authenticate('public/OSI-password.png', 'badPass', testDB)).toBe(false);
+    expect(
+        await authenticate('public/OSI-password.png', 'badPass', testDB)
+    ).toBe(false);
 });
 
 test('AuthSuccess', async () => {
-    expect(await authenticate('public/OSI-password.png', 'PassWord', testDB)).toBe(true);
+    expect(
+        await authenticate('public/OSI-password.png', 'PassWord', testDB)
+    ).toBe(true);
 });
 
 test('AuthNonExistent', async () => {
@@ -31,7 +39,9 @@ test('NewSecureFile', async () => {
 });
 
 test('NewSecureFileDuplicate', async () => {
-    await expect(newSecureFile('NewFile.bat', 'PassWord', testDB)).rejects.toThrow('File already exists');
+    await expect(
+        newSecureFile('NewFile.bat', 'PassWord', testDB)
+    ).rejects.toThrow('File already exists');
 });
 
 test('RemoveSecureFile', async () => {
@@ -40,14 +50,20 @@ test('RemoveSecureFile', async () => {
 });
 
 test('RemoveSecureFileNonexistent', async () => {
-    await expect(deleteSecureFile('Nonexistent', testDB)).rejects.toThrow('File does not exist');
+    await expect(deleteSecureFile('Nonexistent', testDB)).rejects.toThrow(
+        'File does not exist'
+    );
 });
 
 test('ChangePassword', async () => {
     await changePassword('public/OSI-password.png', 'HelloWorld', testDB);
-    expect(await authenticate('public/OSI-password.png', 'HelloWorld', testDB)).toBe(true);
+    expect(
+        await authenticate('public/OSI-password.png', 'HelloWorld', testDB)
+    ).toBe(true);
 });
 
 test('ChangePasswordNonexistent', async () => {
-    await expect(changePassword('Nonexistent', 'NewPassword', testDB)).rejects.toThrow('File does not exist');
+    await expect(
+        changePassword('Nonexistent', 'NewPassword', testDB)
+    ).rejects.toThrow('File does not exist');
 });

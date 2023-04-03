@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "allowJs": true,
+        "target": "ESNext",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "alwaysStrict": true,
+        "module": "ESNext",
+        "moduleResolution": "nodenext",
+        "types": [
+            "node"
+        ],
+        "esModuleInterop": true,
+        "removeComments": true,
+        "noImplicitReturns": true,
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./tests/**/*.ts",
+        "./jest.config.js"
+    ],
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifierResolution": "node"
+    }
+}

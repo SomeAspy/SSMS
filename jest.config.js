@@ -1,3 +1,12 @@
 export default {
-    transform: {}
+    transform: {},
+    collectCoverage: true,
+    collectCoverageFrom: [
+        'src/**/*.js',
+    ],
+    coverageThreshold: {
+        global: {
+            lines: 0
+        }
+    }
 };
