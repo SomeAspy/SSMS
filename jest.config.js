@@ -1,12 +1,12 @@
 export default {
-    transform: {},
-    collectCoverage: true,
-    collectCoverageFrom: [
-        'src/**/*.js',
-    ],
-    coverageThreshold: {
-        global: {
-            lines: 0
-        }
+    preset: "ts-jest/presets/default-esm",
+    transform: {
+        '^.+\\.tsx?$': [
+            'ts-jest',
+            {
+                tsconfig: 'tsconfig.json',
+                useESM: true,
+            },
+        ],
     }
 };

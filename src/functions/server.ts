@@ -1,56 +1,47 @@
-import Fastify from 'fastify';
+import type {FastifyInstance} from "fastify";
+import Fastify from "fastify";
 const FastifyServer = Fastify();
-import fastifyStatic from '@fastify/static';
-import { readJSON } from './JsonWorker.js';
-import { join, resolve } from 'path';
+import fastifyStatic from "@fastify/static";
+import {readJSON} from "./jsonWorker.js";
+import {join, resolve} from "path";
+import type {Settings} from "../types/settings.js";
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import {dirname} from "path";
+import {fileURLToPath} from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const config = await readJSON('src/config.json');
+const settings: Settings = await readJSON<Settings>("src/config.json");
 
-FastifyServer.register(fastifyStatic, {
-    root: join(resolve('.'), 'public'),
+await FastifyServer.register(fastifyStatic, {
+    root: join(resolve("."), "public")
 });
 
 /**
  * @name server
  * @description This constant is the Fastify server
- * @type {any}
  * @constant
  */
-const fastifyInstance: any = Fastify({ logger: false });
+const fastifyInstance: FastifyInstance = Fastify({logger: false});
 
-/**
- * Fastify server settings
- *
- * @type {object}
- */
-const fastifySettings: object = {
-    logger: config.fastifyLogger,
-    port: config.port,
-    host: config.host,
-};
+console.log(__dirname + "\\serveFile.js");
 
-console.log(__dirname + '\\serveFile.js');
+const {serveFile} = await import("./serveFile.js");
+serveFile(fastifyInstance, "public/OSI-password.png");
 
-const { serveFile } = await import('file://' + __dirname + '\\serveFile.js');
-serveFile('public/OSI-password.png');
-
-console.log('hello');
+console.log("hello");
 
 /**
  * Start Fastify server
  *
  * @async
  */
-export const start = async () => {
+export async function start(): Promise<void> {
     try {
-        await fastifyInstance.listen(fastifySettings);
+        await fastifyInstance.listen(settings.fastify);
     } catch (err) {
-        fastifyInstance.log.error('Fastify server failed to start:\n' + err);
+        fastifyInstance.log.error("Fastify server failed to start:\n");
+        fastifyInstance.log.error(err);
         process.exit(1);
     }
-};
+}

@@ -1,11 +1,11 @@
-import { randomBytes } from 'crypto';
-import { readJSON, writeJSON } from './jsonWorker.js';
-import { hash, verify } from 'argon2';
+import {randomBytes} from "crypto";
+import {readJSON, writeJSON} from "./jsonWorker.js";
+import {hash, verify} from "argon2";
 
-import { SecureObject, SecureObjects } from '../types/password.js';
+import type {SecureObject, SecureObjects} from "../types/password.js";
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import {dirname} from "path";
+import {fileURLToPath} from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -16,7 +16,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * @default __dirname + '/../database/passwords.json'
  * @constant
  */
-const db: string = __dirname + '/../database/passwords.json';
+const db: string = __dirname + "/../database/passwords.json";
 
 /**
  * @name makeSalt
@@ -25,7 +25,7 @@ const db: string = __dirname + '/../database/passwords.json';
  * @example makeSalt();
  */
 function makeSalt(): string {
-    return randomBytes(64).toString('hex');
+    return randomBytes(64).toString("hex");
 }
 
 /**
@@ -45,7 +45,7 @@ async function buildSecureObject(
     return {
         path: file,
         hash: await hash(password + salt),
-        salt: salt,
+        salt: salt
     };
 }
 
@@ -64,10 +64,10 @@ export async function newSecureFile(
     password: string,
     dbp: string = db
 ): Promise<void> {
-    const data = await readJSON<SecureObjects>(dbp);
+    const {data} = await readJSON<SecureObjects>(dbp);
     const secureObject = await buildSecureObject(file, password);
     if (data.find((e: SecureObject) => e.path === file)) {
-        throw new Error('File already exists');
+        throw new Error("File already exists");
     } else {
         data.push(secureObject);
         await writeJSON(dbp, data);
@@ -78,9 +78,8 @@ export async function newSecureFile(
  * @name deleteSecureFile
  * @description This function deletes a secure file from the database
  * @async
- * @param {string} file The path to the file
- * @param {string} [dbp=db] The path to the database
- * @returns {Promise<void>}
+ * @param file The path to the file
+ * @param [dbp=db] The path to the database
  * @throws {Error} If the file doesn't exist
  * @example deleteSecureFile('public/OSI-password.png', 'database/passwords.json');
  */
@@ -88,10 +87,10 @@ export async function deleteSecureFile(
     file: string,
     dbp: string = db
 ): Promise<void> {
-    const data = await readJSON(dbp);
-    const secureObject = data.find((e: any) => e.path === file); //TODO: TYPE THIS
+    const {data} = await readJSON<SecureObjects>(dbp);
+    const secureObject = data.find((e: SecureObject) => e.path === file);
     if (!secureObject) {
-        throw new Error('File does not exist');
+        throw new Error("File does not exist");
     } else {
         data.splice(data.indexOf(secureObject), 1);
         await writeJSON(dbp, data);
@@ -102,10 +101,9 @@ export async function deleteSecureFile(
  * @name changePassword
  * @description This function changes the password on a secure file
  * @async
- * @param {string} file The path to the file
- * @param {string} password The new password
- * @param {string} [dbp=db] The path to the database
- * @returns {Promise<void>}
+ * @param file The path to the file
+ * @param password The new password
+ * @param [dbp=db] The path to the database
  * @throws {Error} If the file doesn't exist
  * @example changePassword('public/OSI-password.png', 'password', 'database/passwords.json');
  */
@@ -114,10 +112,10 @@ export async function changePassword(
     password: string,
     dbp: string = db
 ): Promise<void> {
-    const data = await readJSON(dbp);
-    const secureObject = data.find((e: any) => e.path === file); //TODO: TYPE
+    const {data} = await readJSON<SecureObjects>(dbp);
+    const secureObject = data.find((e: SecureObject) => e.path === file);
     if (!secureObject) {
-        throw new Error('File does not exist');
+        throw new Error("File does not exist");
     } else {
         await deleteSecureFile(file, dbp);
         await newSecureFile(file, password, dbp);
@@ -128,19 +126,19 @@ export async function changePassword(
  * @name authenticate
  * @description This function checks if the password is correct
  * @async
- * @param {string} file The path to the file
- * @param {string} password The password to check
- * @param {string} [dbp=db] The path to the database
- * @returns {Promise<boolean>} True if the password is correct, false otherwise
+ * @param file The path to the file
+ * @param password The password to check
+ * @param [dbp=db] The path to the database
+ * @returns True if the password is correct, false otherwise
  * @example auth('public/OSI-password.png', 'password', 'database/passwords.json');
  */
 export async function authenticate(
     file: string,
     password: string,
     dbp: string = db
-) {
-    const data = await readJSON(dbp);
-    const secureObject = data.find((e: any) => e.path === file); // TODO: TYPE THIS
+): Promise<boolean> {
+    const {data} = await readJSON<SecureObjects>(dbp);
+    const secureObject = data.find((e: SecureObject) => e.path === file);
     if (!secureObject) return false;
-    return await verify(secureObject.hash, password + secureObject.salt);
+    return verify(secureObject.hash, password + secureObject.salt);
 }

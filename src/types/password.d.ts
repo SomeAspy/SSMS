@@ -5,5 +5,5 @@ export interface SecureObject {
 }
 
 export interface SecureObjects {
-    data: SecureObjects[];
+    data: SecureObject[];
 }

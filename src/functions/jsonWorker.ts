@@ -1,14 +1,14 @@
-import { readFile, writeFile } from 'fs/promises';
+import {readFile, writeFile} from "fs/promises";
 
 /**
  * @name readJSON
  * @description Read JSON files
  * @async
  * @param path - The path to the JSON file
- * @example const data = await readJSON("example.json");
+ * @example const data = await readJSON<SecureObjects>("example.json");
  */
 export async function readJSON<T>(path: string): Promise<T> {
-    return JSON.parse(await readFile(path, { encoding: 'utf-8' })) as T;
+    return JSON.parse(await readFile(path, {encoding: "utf-8"})) as T;
 }
 
 /**

@@ -1,7 +1,9 @@
 {
-    "IP": "127.0.0.1",
-    "port": 9090,
-    "fastifyLogger": true,
+    "fastify": {
+        "host": "127.0.0.1",
+        "port": 9090,
+        "logger": true
+    },
     "serve404": true,
     "serveHome": true,
     "browse": true,

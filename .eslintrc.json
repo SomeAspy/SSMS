@@ -17,6 +17,12 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
+    "ignorePatterns": [
+        "node_modules/",
+        "dist/",
+        "coverage/",
+        "docs/"
+    ],
     "parser": "@typescript-eslint/parser",
     "overrides": [],
     "parserOptions": {
@@ -30,10 +36,6 @@
         "indent": [
             "error",
             4
-        ],
-        "quotes": [
-            "error",
-            "single"
         ],
         "semi": [
             "error",
