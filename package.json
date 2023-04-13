@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "ESLINT_USE_FLAT_CONFIG": "true",
   "scripts": {
     "start": "node dist/src/index.js",
-    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint .",
     "mkdocs": "jsdoc -c jsdoc.json",
     "build": "rimraf dist && tsc"
   },
@@ -17,32 +17,28 @@
   "author": "Aiden",
   "license": "GPL-3.0-only",
   "dependencies": {
-    "@fastify/static": "^6.9.0",
+    "@fastify/static": "^6.10.1",
     "argon2": "^0.30.3",
     "fastify": "^4.15.0"
   },
   "devDependencies": {
-    "@jest/globals": "^29.5.0",
-    "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
     "better-docs": "^2.7.2",
-    "eslint": "^8.37.0",
-    "eslint-plugin-jsdoc": "^40.1.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-jsdoc": "^40.3.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-only-error": "^1.0.2",
-    "jest": "^29.5.0",
     "jsdoc": "^4.0.2",
     "prettier": "^2.8.7",
     "prettier-eslint": "^15.0.1",
-    "prop-types": "^15.5.9",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^4.4.1",
     "taffydb": "^2.7.3",
-    "ts-jest": "^29.1.0",
-    "typescript": "^5.0.3",
+    "typescript": "^5.0.4",
     "typescript-eslint": "0.0.1-alpha.0"
   }
 }

@@ -19,14 +19,11 @@
     },
     "include": [
         "./src/**/*.ts",
-        "./tests/**/*.ts",
-        "./jest.config.js",
-        "./jest-esm.config.ts",
+        "./tests/**/*.ts"
     ],
     "exclude": [
         "node_modules",
         "dist",
-        "coverage",
         "docs"
     ],
     "ts-node": {
