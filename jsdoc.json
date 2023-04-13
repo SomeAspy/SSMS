@@ -1,6 +1,6 @@
 {
     "source": {
-        "includePattern": ".+\\.js(doc|x)?$",
+        "includePattern": "\\.(jsx|js|ts|tsx)$",
         "include": [
             "src"
         ],
@@ -15,5 +15,8 @@
         "readme": "./.github/README.md",
         "verbose": true,
         "template": "node_modules/better-docs"
-    }
+    },
+    "plugins": [
+        "node_modules/better-docs/typescript"
+    ]
 }
