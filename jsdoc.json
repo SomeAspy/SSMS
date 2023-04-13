@@ -2,12 +2,9 @@
     "source": {
         "includePattern": ".+\\.js(doc|x)?$",
         "include": [
-            "src",
-            "tests"
+            "src"
         ],
-        "exclude": [
-            "tests/resources"
-        ]
+        "exclude": []
     },
     "recurseDepth": 10,
     "opts": {
