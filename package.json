@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "ESLINT_USE_FLAT_CONFIG": "true",
   "scripts": {
-    "start": "node dist/src/index.js",
+    "start": "node dist/index.js",
     "lint": "eslint .",
     "mkdocs": "jsdoc -c jsdoc.json",
     "build": "rimraf dist && tsc",
