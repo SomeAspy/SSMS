@@ -7,13 +7,14 @@ TODO
     -   ~~file specific passwords~~
 -   Embed content
 -   UI for browsing files
--   Blacklist/Whitelist
+-   ~~Blacklist/Whitelist~~
 -   Responsive UI
 -   Folder support
     -   Recursive Support up to at least 100
 -   ~~Promisify FS modules (fix weird shit with EsLint saying await does nothing)~~
 -   Deleting password on file removes its hosting
--   TypeScript
+-   ~~TypeScript~~
+-   Fix serving 404 on ignored file
 
 ## EXTRA
 
@@ -29,9 +30,8 @@ TODO
 -   ~~Hash and salt passwords~~
 -   ~~JSdoc on everything~~
 -   ~~Switch to Argon2 Password Hashing~~
--   Fix Jest Coverage Testing being upset about the preset variables in password.js
--   Custom paths
--   Custom media locations
+-   ~~Custom paths~~
+-   ~~Custom media locations~~
 
 ## PROBABLY NEVER GONNA HAPPEN
 

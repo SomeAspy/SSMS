@@ -9,10 +9,15 @@
     "browse": true,
     "passwordDefault": false,
     "defaultPassword": "password",
-    "blacklist": [
-        ".example"
-    ],
+    "requireFileExtension": false,
+    "blacklist": {
+        "regex": ".*\\.noRegex$",
+        "extensions": [
+            "ignore"
+        ]
+    },
     "paths": [
-        "./public/"
+        "./public/",
+        "./public2/"
     ]
 }

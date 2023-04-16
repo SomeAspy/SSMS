@@ -1,4 +1,4 @@
-import Fastify from "fastify";
+import Fastify from 'fastify';
 
 export interface Settings {
     fastify: Fastify.FastifyListenOptions;
@@ -7,6 +7,10 @@ export interface Settings {
     browse: boolean;
     passwordDefault: boolean;
     defaultPassword: string;
-    blacklist: string[];
+    requireFileExtension: boolean;
+    blacklist: {
+        regex: string;
+        extensions: string[];
+    };
     paths: string[];
 }
