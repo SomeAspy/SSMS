@@ -18,28 +18,28 @@
   "author": "Aiden",
   "license": "GPL-3.0-only",
   "dependencies": {
-    "@fastify/static": "^6.10.1",
+    "@fastify/static": "^6.11.0",
     "argon2": "^0.30.3",
-    "fastify": "^4.15.0"
+    "fastify": "^4.22.2"
   },
   "devDependencies": {
-    "@types/node": "^20.1.1",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^5.58.0",
+    "@types/node": "^20.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
     "better-docs": "^2.7.2",
-    "eslint": "^8.38.0",
-    "eslint-plugin-jsdoc": "^46.2.4",
+    "eslint": "^8.49.0",
+    "eslint-plugin-jsdoc": "^46.5.1",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-only-error": "^1.0.2",
     "jsdoc": "^4.0.2",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.3",
     "prettier-eslint": "^15.0.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rimraf": "^5.0.0",
+    "rimraf": "^5.0.1",
     "taffydb": "^2.7.3",
-    "typescript": "^5.0.4",
+    "typescript": "^5.2.2",
     "typescript-eslint": "0.0.1-alpha.0"
   }
 }
