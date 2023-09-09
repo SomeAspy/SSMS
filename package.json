@@ -19,7 +19,7 @@
   "license": "GPL-3.0-only",
   "dependencies": {
     "@fastify/static": "^6.11.0",
-    "argon2": "^0.30.3",
+    "argon2": "^0.31.1",
     "fastify": "^4.22.2"
   },
   "devDependencies": {
