@@ -28,7 +28,7 @@
     "@typescript-eslint/parser": "^6.6.0",
     "better-docs": "^2.7.2",
     "eslint": "^8.49.0",
-    "eslint-plugin-jsdoc": "^46.5.1",
+    "eslint-plugin-jsdoc": "^47.0.2",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-only-error": "^1.0.2",
     "jsdoc": "^4.0.2",
