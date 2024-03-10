@@ -42,7 +42,6 @@ for (const dir of settings.paths) {
 
 /**
  * Start Fastify server
- *
  * @async
  */
 export async function start(): Promise<void> {

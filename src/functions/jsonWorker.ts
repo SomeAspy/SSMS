@@ -6,6 +6,7 @@ import {readFile, writeFile} from "fs/promises";
  * @async
  * @param path - The path to the JSON file
  * @example const data = await readJSON<SecureObjects>("example.json");
+ * @returns File
  */
 export async function readJSON<T>(path: string): Promise<T> {
     return JSON.parse(await readFile(path, {encoding: "utf-8"})) as T;

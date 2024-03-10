@@ -55,7 +55,7 @@ async function buildSecureObject(
  * @async
  * @param  file The path to the file
  * @param password The password to hash
- * @param [dbp=db] The path to the database
+ * @param dbp The path to the database
  * @throws {Error} If the file already exists
  * @example newSecureFile('public/OSI-password.png', 'password', false, 'database/passwords.json');
  */
@@ -79,7 +79,7 @@ export async function newSecureFile(
  * @description This function deletes a secure file from the database
  * @async
  * @param file The path to the file
- * @param [dbp=db] The path to the database
+ * @param dbp The path to the database
  * @throws {Error} If the file doesn't exist
  * @example deleteSecureFile('public/OSI-password.png', 'database/passwords.json');
  */
@@ -103,7 +103,7 @@ export async function deleteSecureFile(
  * @async
  * @param file The path to the file
  * @param password The new password
- * @param [dbp=db] The path to the database
+ * @param [dbp] The path to the database
  * @throws {Error} If the file doesn't exist
  * @example changePassword('public/OSI-password.png', 'password', 'database/passwords.json');
  */
@@ -128,7 +128,7 @@ export async function changePassword(
  * @async
  * @param file The path to the file
  * @param password The password to check
- * @param [dbp=db] The path to the database
+ * @param [dbp] The path to the database
  * @returns True if the password is correct, false otherwise
  * @example auth('public/OSI-password.png', 'password', 'database/passwords.json');
  */

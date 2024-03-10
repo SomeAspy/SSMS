@@ -14,7 +14,7 @@ const settings: Settings = await readJSON<Settings>('config.json');
  * @description This function serves a file from the database
  * @param fastifyInstance The Fastify Instance
  * @param path The path to the file
- * @param [secured=false] If the file is secured
+ * @param secured If the file is secured
  * @example serveFile(fastify, 'public/OSI-password.png', true);
  */
 export async function serveFile(
