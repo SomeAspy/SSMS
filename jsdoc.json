@@ -13,10 +13,6 @@
         "encoding": "utf8",
         "private": true,
         "readme": "./.github/README.md",
-        "verbose": true,
-        "template": "node_modules/better-docs"
-    },
-    "plugins": [
-        "node_modules/better-docs/typescript"
-    ]
+        "verbose": true
+    }
 }
