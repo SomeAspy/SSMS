@@ -1,44 +1,24 @@
 {
-  "name": "simple-secure-media-server",
   "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
-  "ESLINT_USE_FLAT_CONFIG": "true",
   "scripts": {
     "start": "node dist/index.js",
     "lint": "eslint .",
     "mkdocs": "jsdoc -c jsdoc.json",
-    "build": "rimraf dist && tsc",
+    "build": "tsc",
     "dev": "tsx src/index.ts"
   },
-  "keywords": [
-    "FileHost"
-  ],
-  "author": "Aiden",
-  "license": "GPL-3.0-only",
   "dependencies": {
     "@fastify/static": "^7.0.1",
     "argon2": "^0.40.1",
     "fastify": "^4.26.2"
   },
   "devDependencies": {
-    "@types/node": "^20.11.25",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@types/node": "^20.11.26",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",
     "eslint-plugin-jsdoc": "^48.2.1",
-    "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-only-error": "^1.0.2",
     "jsdoc": "^4.0.2",
-    "prettier": "^3.2.5",
-    "prettier-eslint": "^16.3.0",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rimraf": "^5.0.5",
-    "taffydb": "^2.7.3",
-    "typescript": "^5.4.2",
-    "typescript-eslint": "7.1.1"
+    "typescript": "^5.4.2"
   }
 }

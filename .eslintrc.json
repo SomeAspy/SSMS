@@ -1,44 +1,30 @@
 {
+    "parser": "@typescript-eslint/parser",
     "plugins": [
-        "jsdoc",
-        "json",
-        "only-error",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "jsdoc"
     ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:jsdoc/recommended"
+    ],
+    "root": true,
     "env": {
         "node": true,
         "es6": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:jsdoc/recommended",
-        "plugin:json/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
-    ],
-    "ignorePatterns": [],
-    "parser": "@typescript-eslint/parser",
-    "overrides": [],
     "parserOptions": {
         "project": true,
-        "tsconfigRootDir": "__dirname",
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "ecmaFeatures": {}
+        "tsconfigRootDir": "tsconfig.json"
     },
-    "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "prefer-const": [
-            "error"
-        ],
+    "rules":{
         "jsdoc/require-param-type": 0,
         "jsdoc/require-returns-type": 0
-    }
+    },
+    "ignorePatterns":[
+        "dist",
+        "docs",
+        "node_modules"
+    ]
 }
