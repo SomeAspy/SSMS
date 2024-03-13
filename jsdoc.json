@@ -4,7 +4,11 @@
         "include": [
             "src"
         ],
-        "exclude": []
+        "exclude": [
+            "node_modules",
+            "dist",
+            "docs"
+        ]
     },
     "recurseDepth": 10,
     "opts": {
