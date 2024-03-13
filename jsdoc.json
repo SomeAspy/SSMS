@@ -16,7 +16,7 @@
         "recurse": true,
         "encoding": "utf8",
         "private": true,
-        "readme": "./.github/README.md",
+        "readme": "./.github/readme.md",
         "verbose": true
     }
 }
