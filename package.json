@@ -19,6 +19,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-jsdoc": "^48.2.1",
     "jsdoc": "^4.0.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   }
 }
